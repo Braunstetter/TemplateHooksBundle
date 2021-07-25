@@ -3,6 +3,7 @@
 
 namespace Braunstetter\TemplateHooks\Twig;
 
+use Throwable;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -20,6 +21,10 @@ class Renderer
      * @param array $context
      * @param $name
      * @return string
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     * @throws Throwable
      */
     public function invokeHook(array $context, $name): string
     {
@@ -34,8 +39,8 @@ class Renderer
 
                 try {
                     $return .= $hook->render();
-                } catch (LoaderError | RuntimeError | SyntaxError) {
-                    // just do nothing
+                } catch (Throwable $e) {
+                    throw $e;
                 }
             }
         }
