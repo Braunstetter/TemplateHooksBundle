@@ -33,7 +33,7 @@ class Renderer
         foreach ($this->hooks as $hook) {
 
             /** @var TemplateHook $hook */
-            if ($hook->target === $name) {
+            if ($this->targetMatches($hook, $name)) {
 
                 $hook->setContext($context);
 
@@ -48,4 +48,20 @@ class Renderer
 
         return $return;
     }
+
+    /**
+     * @param TemplateHook $hook
+     * @param mixed $name
+     * @return bool
+     */
+    private function targetMatches(TemplateHook $hook, mixed $name): bool
+    {
+        if (is_array($hook->target)) {
+            return in_array($name, $hook->target);
+        }
+
+        return $hook->target === $name;
+    }
+
+
 }

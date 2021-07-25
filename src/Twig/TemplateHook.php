@@ -10,7 +10,7 @@ use Twig\Environment;
 abstract class TemplateHook implements HookInterface
 {
     protected Environment $templating;
-    public string $target;
+    public string|array $target;
     public array $context;
 
     public function __construct(Environment $templating)

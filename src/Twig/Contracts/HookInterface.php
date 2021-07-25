@@ -16,5 +16,5 @@ interface HookInterface
      * @throws LoaderError
      */
     public function render(): string;
-    public function setTarget(): string;
+    public function setTarget(): string|array;
 }
