@@ -44,3 +44,4 @@ class BreadcrumbsHook extends TemplateHook
 ```
 
 That's it. Your template gets rendered and you can process any logic before rendering it.
+
