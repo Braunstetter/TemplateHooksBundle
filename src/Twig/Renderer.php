@@ -37,11 +37,7 @@ class Renderer
 
                 $hook->setContext($context);
 
-                try {
-                    $return .= $hook->render();
-                } catch (Throwable $e) {
-                    throw $e;
-                }
+                $return .= $hook->render();
             }
         }
 
