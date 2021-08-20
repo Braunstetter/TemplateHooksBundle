@@ -14,7 +14,7 @@ You can use the `hook` tag inside your templates now:
 {{ hook('app.cp.global-header') }}
 ```
 
-Once you used this tag somewhere you and any bundles can hook into this by creating a class : 
+Once you inserted this tag somewhere you and any bundles can hook into this by creating a class : 
 
 ```php
 <?php
