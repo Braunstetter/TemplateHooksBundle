@@ -45,3 +45,14 @@ class BreadcrumbsHook extends TemplateHook
 
 That's it. Your template gets rendered and you can process any logic before rendering it.
 
+### Ship javascript and css
+
+With the use of [AssetsPushBundle](https://github.com/Braunstetter/assets-push-bundle) you can write inside `hooks/breadcrumbs.html.twig`: 
+
+```html
+{% css '/breadcrumbs.css' %}
+```
+
+The css or js will get included inside the head of the page.
+
+For more information follow the [official docs](https://github.com/Braunstetter/assets-push-bundle).
