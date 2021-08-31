@@ -19,7 +19,7 @@ class Extension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('hook', [$this->renderer, 'invokeHook'], ['is_safe' => ['html'], 'needs_context' => true]),
+            new TwigFunction('hook', [$this->renderer, 'invokeHook'], ['is_safe' => ['html'], 'needs_context' => true, 'needs_environment' => true]),
         ];
     }
 }

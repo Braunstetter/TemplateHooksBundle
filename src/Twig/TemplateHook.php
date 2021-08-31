@@ -13,11 +13,9 @@ abstract class TemplateHook implements HookInterface
     public string|array $target;
     public array $context;
 
-    public function __construct(Environment $templating)
+    public function __construct()
     {
-        $this->templating = $templating;
-
-        if(method_exists($this, 'setTarget')) {
+        if (method_exists($this, 'setTarget')) {
             $this->target = $this->setTarget();
         }
     }
@@ -37,6 +35,16 @@ abstract class TemplateHook implements HookInterface
     public function setContext(array $context): TemplateHook
     {
         $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * @param Environment $env
+     * @return TemplateHook
+     */
+    public function setEnvironment(Environment $env): TemplateHook
+    {
+        $this->templating = $env;
         return $this;
     }
 

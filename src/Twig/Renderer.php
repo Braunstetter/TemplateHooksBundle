@@ -3,7 +3,7 @@
 
 namespace Braunstetter\TemplateHooks\Twig;
 
-use Throwable;
+use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -18,15 +18,15 @@ class Renderer
     }
 
     /**
+     * @param Environment $env
      * @param array $context
      * @param $name
      * @return string
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
-     * @throws Throwable
      */
-    public function invokeHook(array $context, $name): string
+    public function invokeHook(Environment $env, array $context, $name): string
     {
         $return = '';
 
@@ -35,12 +35,12 @@ class Renderer
             /** @var TemplateHook $hook */
             if ($this->targetMatches($hook, $name)) {
 
+                $hook->setEnvironment($env);
                 $hook->setContext($context);
 
                 $return .= $hook->render();
             }
         }
-
 
         return $return;
     }
@@ -58,6 +58,5 @@ class Renderer
 
         return $hook->target === $name;
     }
-
 
 }

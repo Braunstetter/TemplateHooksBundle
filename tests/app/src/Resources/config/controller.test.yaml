@@ -1,0 +1,6 @@
+services:
+  Braunstetter\TemplateHooks\Test\app\src\Controller\TestController:
+    tags: [controller.service_arguments, controller.service_subscriber]
+    public: true
+    arguments:
+      - '@Twig_Environment'

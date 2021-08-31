@@ -1,0 +1,17 @@
+services:
+  _instanceof:
+    Braunstetter\TemplateHooks\Twig\Contracts\HookInterface:
+      tags: [ 'template_hook' ]
+
+  Braunstetter\TemplateHooks\Twig\Extension:
+    tags: [ 'twig.extension' ]
+    arguments:
+      - '@Braunstetter\TemplateHooks\Twig\Renderer'
+
+  Braunstetter\TemplateHooks\Twig\Renderer:
+    arguments:
+      - !tagged_iterator template_hook
+      - '@Twig_Environment'
+
+  # Register Test hooks
+  Braunstetter\TemplateHooks\Test\app\src\Twig\Hooks\TestHook:

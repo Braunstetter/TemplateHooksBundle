@@ -1,0 +1,3 @@
+test:
+  path: /test
+  controller: Braunstetter\TemplateHooks\Test\app\src\Controller\TestController::index
