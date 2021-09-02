@@ -1,5 +1,7 @@
 # TemplateHooksBundle
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Braunstetter/TemplateHooksBundle/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Braunstetter/TemplateHooksBundle/?branch=main)
+
 Extend your twig templates without inheritance.
 
 ## Installation
