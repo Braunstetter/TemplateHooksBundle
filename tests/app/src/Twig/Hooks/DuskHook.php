@@ -1,10 +1,10 @@
 <?php
 
-namespace Braunstetter\TemplateHooks\Test\twig\Hooks;
+namespace Braunstetter\TemplateHooks\Test\app\src\Twig\Hooks;
 
 use Braunstetter\TemplateHooks\Twig\TemplateHook;
 
-class TestHook extends TemplateHook
+class DuskHook extends TemplateHook
 {
 
     /**
@@ -12,12 +12,11 @@ class TestHook extends TemplateHook
      */
     public function render(): string
     {
-        return 'hook works';
+        return $this->templating->render('hooks/dusk_hook.html.twig');
     }
 
     public function setTarget(): string|array
     {
-        return 'test';
+        return 'dusk';
     }
-
 }

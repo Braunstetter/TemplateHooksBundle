@@ -11,4 +11,3 @@ services:
   Braunstetter\TemplateHooks\Twig\Renderer:
     arguments:
       - !tagged_iterator template_hook
-      - '@Twig_Environment'

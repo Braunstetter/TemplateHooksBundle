@@ -14,7 +14,7 @@ You can use the `hook` tag inside your templates now:
 {{ hook('app.cp.global-header') }}
 ```
 
-Once you inserted this tag somewhere you and any bundles can hook into this by creating a class : 
+Once you inserted this tag somewhere you and any bundles can hook into this by creating a class :
 
 ```php
 <?php
@@ -39,6 +39,9 @@ class BreadcrumbsHook extends TemplateHook
     public function setTarget(): string|array
     {
         return 'app.cp.global-header';
+        
+        // it would be possible to register to multiple hooks
+        // return ['app.cp.global-header', 'app.cp.global-sidebar'];
     }
 }
 ```
@@ -47,7 +50,8 @@ That's it. Your template gets rendered and you can process any logic before rend
 
 ### Ship javascript and css
 
-With the use of [AssetsPushBundle](https://github.com/Braunstetter/assets-push-bundle) you can write inside `hooks/breadcrumbs.html.twig`: 
+With the use of [AssetsPushBundle](https://github.com/Braunstetter/assets-push-bundle) you can write
+inside `hooks/breadcrumbs.html.twig`:
 
 ```html
 {% css '/breadcrumbs.css' %}

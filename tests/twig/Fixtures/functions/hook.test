@@ -1,0 +1,11 @@
+--TEST--
+"hook" function outputs correctly
+
+--TEMPLATE--
+{{ hook('test') }}
+
+--DATA--
+return []
+
+--EXPECT--
+hook works

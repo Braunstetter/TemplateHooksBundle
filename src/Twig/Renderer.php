@@ -3,6 +3,7 @@
 
 namespace Braunstetter\TemplateHooks\Twig;
 
+use Traversable;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -12,7 +13,7 @@ class Renderer
 {
     private iterable $hooks;
 
-    public function __construct(iterable $hooks)
+    public function __construct(Traversable|array $hooks)
     {
         $this->hooks = $hooks;
     }
@@ -57,6 +58,14 @@ class Renderer
         }
 
         return $hook->target === $name;
+    }
+
+    public function getMatchingHooks($name): iterable
+    {
+        return array_filter($this->hooks, function ($hook) use ($name) {
+            /** @var TemplateHook $hook */
+            return $this->targetMatches($hook, $name);
+        });
     }
 
 }

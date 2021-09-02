@@ -11,7 +11,7 @@ services:
   Braunstetter\TemplateHooks\Twig\Renderer:
     arguments:
       - !tagged_iterator template_hook
-      - '@Twig_Environment'
+    public: true
 
   # Register Test hooks
   Braunstetter\TemplateHooks\Test\app\src\Twig\Hooks\TestHook:
