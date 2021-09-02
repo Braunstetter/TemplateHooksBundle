@@ -1,6 +1,9 @@
 # TemplateHooksBundle
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Braunstetter/TemplateHooksBundle/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Braunstetter/TemplateHooksBundle/?branch=main)
+[![Build Status](https://app.travis-ci.com/Braunstetter/TemplateHooksBundle.svg?branch=main)](https://app.travis-ci.com/Braunstetter/TemplateHooksBundle)
+[![Total Downloads](http://poser.pugx.org/braunstetter/template-hooks-bundle/downloads)](https://packagist.org/packages/braunstetter/template-hooks-bundle)
+[![License](http://poser.pugx.org/braunstetter/template-hooks-bundle/license)](https://packagist.org/packages/braunstetter/template-hooks-bundle)
 
 Extend your twig templates without inheritance.
 
