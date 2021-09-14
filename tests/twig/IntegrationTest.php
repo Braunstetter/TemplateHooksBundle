@@ -27,8 +27,4 @@ class IntegrationTest extends IntegrationTestCase
         return __DIR__ . "/Fixtures";
     }
 
-    private function getHooks()
-    {
-//        yield new TestHook($this->);
-    }
 }
