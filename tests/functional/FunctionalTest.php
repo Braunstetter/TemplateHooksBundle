@@ -34,8 +34,10 @@ class FunctionalTest extends TestCase
 
         $this->assertGreaterThan(
             0,
-            $client->getCrawler()->filter('html:contains("this hook works")')->count()
+            $client->getCrawler()->filter('div:contains("this hook works")')->count()
         );
+
+        $this->assertCount(2, $client->getCrawler()->filter('div:contains("this hook works")'));
     }
 
     public function test_dusk_hook_dont_trigger()

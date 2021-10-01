@@ -15,3 +15,4 @@ services:
 
   # Register Test hooks
   Braunstetter\TemplateHooks\Test\app\src\Twig\Hooks\TestHook:
+  Braunstetter\TemplateHooks\Test\app\src\Twig\Hooks\SecondTestHook:

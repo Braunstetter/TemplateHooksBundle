@@ -13,7 +13,7 @@ class Renderer
 {
     private iterable $hooks;
 
-    public function __construct(Traversable|array $hooks)
+    public function __construct(iterable $hooks)
     {
         $this->hooks = $hooks;
     }
@@ -39,6 +39,7 @@ class Renderer
                 $hook->setEnvironment($env);
                 $hook->setContext($context);
 
+                $return .= ' ';
                 $return .= $hook->render();
             }
         }
