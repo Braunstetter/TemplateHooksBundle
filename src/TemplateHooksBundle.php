@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class TemplateHooksBundle extends Bundle
 {
-    public function getContainerExtension(): bool|TemplateHooksExtension|ExtensionInterface|null
+    public function getContainerExtension(): ?ExtensionInterface
     {
         if (null === $this->extension) {
             $this->extension = new TemplateHooksExtension();
